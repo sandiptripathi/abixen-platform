@@ -1,0 +1,58 @@
+ <form class="form form-instance" role="form" name="webContentDetails.entityForm" novalidate>
+            <div class="row form-row">
+                <div class="col-md-6">
+                <input-drop-down name="structure"
+                                 id="structureInput"
+                                 ng-model="webContentDetails.entity.structure"
+                                 ng-model-as-object="true"
+                                 label="{{'webContentDetails.structure.label' | translate}}"
+                                 options="webContentDetails.structures"
+                                 show-empty-value="true"
+                                 value-key="id"
+                                 value-label="name"
+                                 empty-value-label="{{'webContentDetails.structure.select' | translate}}"
+                                 key-as-value="false"
+                                 validators="webContentDetails.validators">
+                </input-drop-down>
+               <div  ng-repeat="row in webContentDetails.rows.row">
+                   <input-text model="row.value"
+                               label="{{row.name}}"
+                               name="{{row.name}}"
+                               ng-show="row.type=='text'"
+                               validators="webContentDetails.validators">
+                   </input-text>
+                   <input-text-area model="row.value"
+                                    label="{{row.name}}"
+                                    name="{{row.name}}"
+                                    ng-show="row.type=='textArea'"
+                                    validators="webContentDetails.validators">
+                   </input-text-area>
+                   <input-ckeditor model="row.value"
+                                   label="{{row.name}}"
+                                   name="{{row.name}}"
+                                   ng-show="row.type=='richTextArea'"
+                                   validators="webContentDetails.validators">
+                   </input-ckeditor>
+                   <input-date model="row.value"
+                               label="{{row.name}}"
+                               name="{{row.name}}"
+                               ng-show="row.type=='date'"
+                               validators="webContentDetails.validators">
+                    </input-date>
+                    </div>
+            </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row bottom-navigation">
+    <div class="col-sx-12 bottom-navigation-content">
+        <button class="btn save-button" ng-click="webContentDetails.saveForm()"
+                ng-disabled="webContentDetails.entityForm.$invalid">
+            <i class="fa fa-floppy-o"></i><span>&nbsp;Save</span>
+        </button>
+        <button ui-sref="application.webContentService.webContent.list" class="btn cancel-button">
+            <i class="fa fa-times"></i><span>&nbsp;Cancel</span>
+        </button>
+    </div>
+</div>

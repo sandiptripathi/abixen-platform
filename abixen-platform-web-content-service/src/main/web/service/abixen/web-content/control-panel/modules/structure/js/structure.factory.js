@@ -25,7 +25,12 @@
     function Structure($resource) {
         return $resource('/api/service/abixen/web-content/control-panel/structures/:id', {}, {
             query: {method: 'GET', isArray: false},
-            update: {method: 'PUT'}
+            update: {method: 'PUT'},
+            queryAll: {
+                method: 'GET',
+                isArray: true,
+                url: '/api/service/abixen/web-content/control-panel/structures/all'
+            }
         });
     }
 

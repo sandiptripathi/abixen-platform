@@ -29,13 +29,17 @@
         $translateProvider.translations('POLISH', {
             'webContentService.type.label': 'Type',
             'webContentService.title.placeholder': 'Title',
-            'webContentService.content.label': 'Content'
+            'webContentService.content.label': 'Content',
+            'webContentDetails.structure.label': 'Structure',
+            'webContentDetails.structure.select': 'Select Structure'
         });
 
         $translateProvider.translations('ENGLISH', {
             'webContentService.type.label': 'Type',
             'webContentService.title.placeholder': 'Title',
-            'webContentService.content.label': 'Content'
+            'webContentService.content.label': 'Content',
+            'webContentDetails.structure.label': 'Structure',
+            'webContentDetails.structure.select': 'Select Structure'
         });
     }
 })();

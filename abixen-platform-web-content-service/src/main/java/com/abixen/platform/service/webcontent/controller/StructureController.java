@@ -103,4 +103,11 @@ public class StructureController {
 
         return structures;
     }
+
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
+    public List<Structure> getStructures() {
+        log.debug("getStructures()");
+
+        return structureService.findAllStructures();
+    }
 }
